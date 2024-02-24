@@ -32,5 +32,8 @@ var listener = app.listen(process.env.PORT || 3000, function () {
 let resObj = {};
 
 app.get("/api/whoami", function(req, res) {
-  res.json({ipaddress: ipaddress})
+  resObj["ipaddress"] = req.ip
+  
+  res.json(resObj);
+  
 })
